@@ -44,14 +44,14 @@ const RecommendList = props => {
         onPress={()=>{Navigator.navigate("FriendsDetails",{id:item.item.id,nickName:item.item.nick_name})}}
       >
         <View style={{position: 'relative'}}>
-          <Image style={{height: 60, width: 60, borderRadius:30}} source={{uri: item.item.header}}></Image>
+          <Image style={{height: 60, width: 60, borderRadius:30}} source={{uri: item.item.header}} />
         </View>
         {/*右边结构*/}
         <View style={{flex: 1, flexDirection: 'row', marginLeft:5}}>
           <View style={{justifyContent: 'space-around', alignItems: 'center'}}>
             <Text>
               {item.item.nick_name} &nbsp;
-              <IconFont style={{color: 'red'}} name="icontanhuanv"></IconFont>&nbsp;
+              <IconFont style={{color: 'red'}} name="icontanhuanv" />&nbsp;
               {item.item.age}岁
             </Text>
             <Text style={{marginTop: 2}}>
@@ -70,7 +70,7 @@ const RecommendList = props => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-              <IconFont style={{color: 'red', fontSize: 30}} name="iconxin"></IconFont>
+              <IconFont style={{color: 'red', fontSize: 30}} name="iconxin" />
               <Text style={{
                 position: 'absolute',
                 color: '#fff',

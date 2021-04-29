@@ -41,7 +41,7 @@ const Recommend = props => {
           {recommends.map((item, index) => {
             return (
               <Image key={item.id} source={{uri: item.header}}
-                     style={{width: 40, height: 40, borderRadius: 20}}></Image>
+                     style={{width: 40, height: 40, borderRadius: 20}} />
             );
           })}
           <Text> > </Text>

@@ -35,7 +35,7 @@ const PerfectGirl = props => {
           {
             perfectGirl.map((item, index) => {
               return (
-                <Image key={item.id} style={{height: 120, width: 120}} source={{uri: item.header}}></Image>
+                <Image key={item.id} style={{height: 120, width: 120}} source={{uri: item.header}} />
               );
             })
 
@@ -67,7 +67,7 @@ const PerfectGirl = props => {
               <View style={{justifyContent: 'space-around', alignItems: 'center'}}>
                 <Text>
                   {perfectGirl[0].nick_name} &nbsp;
-                  <IconFont style={{color: 'red'}} name="icontanhuanv"></IconFont>&nbsp;
+                  <IconFont style={{color: 'red'}} name="icontanhuanv"/>&nbsp;
                   {perfectGirl[0].age}岁
                 </Text>
                 <Text style={{marginTop: 20}}>

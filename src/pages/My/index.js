@@ -1,20 +1,15 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * @Author visupervi
+ * @Description 我的路由组件
+ * @Date 5:50 下午 2021/4/27
+ * @Param
+ * @return
  */
 
 import React, {useEffect, useState} from 'react';
-import type {Node} from 'react';
 import {
   Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   Text, TouchableOpacity,
-  useColorScheme,
   View,
 } from 'react-native';
 import IconFont from '../../components/IconComponent/IconFont';
@@ -65,7 +60,7 @@ const My = props => {
   const renderFollow = props => {
     return (
       <TouchableOpacity
-        onPress={() => Navigator.navigate("Follow", {type:props.type,title:props.title})}
+        onPress={() => Navigation.navigate("Follow", {type:props.type,title:props.title})}
         style={{ flex: 1, alignItems: "center", justifyContent: 'center' }} >
         <Text style={{ color: "#666", fontSize: 22 }} >{userInfo.followEachOther}</Text>
         <Text style={{ color: "#666", fontSize: 16 }} >{props.title}</Text>
@@ -131,7 +126,6 @@ const My = props => {
               )
             })
           }
-
         </View>
       </View>
     </>

@@ -204,7 +204,7 @@ const FriendsDetails = props => {
             <View style={{width: '100%', height: 30, alignSelf: 'center'}}>
               <LinearGradientBtn
                 color={['#f2ab5a', '#ec7c50']}
-                style={{color:"#fff"}}
+                style={{color: '#fff'}}
               >
                 <IconFont style={{color: '#fff'}} name="iconliaotian"></IconFont>
                 <Text style={{color: '#fff'}}>聊一下</Text>
@@ -218,7 +218,7 @@ const FriendsDetails = props => {
             <View style={{width: '100%', height: 30, alignSelf: 'center'}}>
               <LinearGradientBtn
                 color={['#6d47f8', '#e56b7f']}
-                style={{color:"#fff"}}
+                style={{color: '#fff'}}
               >
                 <IconFont style={{color: '#fff'}} name="iconxihuan-o"></IconFont>
                 <Text style={{color: '#fff'}}>喜欢</Text>

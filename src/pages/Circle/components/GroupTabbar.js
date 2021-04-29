@@ -1,3 +1,10 @@
+/**
+ * @Author visupervi
+ * @Description app顶部tab切换
+ * @Date 10:16 上午 2021/4/29
+ * @Param
+ * @return
+ */
 import React, {Component} from 'react';
 import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
 import IconFont from '../../../components/IconComponent/IconFont';
@@ -17,12 +24,16 @@ const GroupTabbar = props => {
     >
       {
         props.isBack ?
-          <IconFont name="iconfanhui"
-                    style={{
-                      color: '#fff', fontSize: 20,
-                      position: 'absolute', left: 10, bottom: 30,
-                    }}
-                    onPress={props.onPress}
+          <IconFont
+            name="iconfanhui"
+            style={{
+              color: '#fff',
+              fontSize: 20,
+              position: 'absolute',
+              left: 10,
+              bottom: 30,
+            }}
+            onPress={props.onPress}
           /> :
           <></>
       }

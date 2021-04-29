@@ -24,9 +24,6 @@ import Circle from '../Circle';
 import Message from '../Message';
 import MyHome from '../My';
 
-
-// import request from "./utils/request";
-// import { MY_INFO } from "./utils/pathMap";
 // import {inject, observer} from 'mobx-react';
 // @inject("UserStore")
 // @observer

@@ -16,14 +16,14 @@ import {inject, observer} from 'mobx-react';
 import SvgUri from 'react-native-svg-uri';
 import {tanhua, near, testSoul} from '../../../utils/SvgIcons';
 // import {useNavigation}  from '@react-navigation/native';
-import {useNavigation} from "@react-navigation/native";
+import {useNavigation} from '@react-navigation/native';
 
 const HeaderIcon = props => {
   const Navigation = useNavigation();
 
   const handlerGotoPage = (value) => {
     Navigation.navigate(value);
-  }
+  };
 
   return (
     <>
@@ -48,7 +48,7 @@ const HeaderIcon = props => {
               width: 60, height: 60, borderRadius: 30,
               backgroundColor: '#2285dc', justifyContent: 'center', alignItems: 'center',
             }}>
-              <SvgUri width={30} height={30} fill={'#fff'} svgXmlData={near}></SvgUri>
+              <SvgUri width={30} height={30} fill={'#fff'} svgXmlData={near}/>
             </View>
             <Text style={{marginTop: 4, color: '#ffffff9a'}}>搜附近</Text>
           </TouchableOpacity>
@@ -59,7 +59,7 @@ const HeaderIcon = props => {
               width: 60, height: 60, borderRadius: 30,
               backgroundColor: '#fb3849', justifyContent: 'center', alignItems: 'center',
             }}>
-              <SvgUri width={30} height={30} fill={'#fff'} svgXmlData={testSoul}></SvgUri>
+              <SvgUri width={30} height={30} fill={'#fff'} svgXmlData={testSoul}/>
             </View>
             <Text style={{marginTop: 4, color: '#ffffff9a'}}>测灵魂</Text>
           </TouchableOpacity>

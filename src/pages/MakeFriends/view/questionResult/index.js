@@ -27,7 +27,7 @@ const TestResult = props => {
         style={{ flex: 1, width: "100%" }}
         source={require("../../../../assets/images/qabg.png")}
       >
-        <AppHeader displayLeft={true} title={'测试结果'}></AppHeader>
+        <AppHeader displayLeft={true} title={'测试结果'} />
         <ImageBackground
           style={{ flex: 1, width: "100%", position: 'relative' }}
           resizeMode="stretch"

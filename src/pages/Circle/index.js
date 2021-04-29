@@ -7,14 +7,6 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Lasted from './view/lasted';
 import Recommend from './view/recommend';
@@ -26,8 +18,8 @@ const Circle = props => {
        initialPage={0}
        renderTabBar={() => <GroupTabbar isBack={false}/>}
      >
-       <Recommend tabLabel='推荐'>My</Recommend>
-       <Lasted tabLabel='最新'>favorite</Lasted>
+       <Recommend tabLabel='推荐'></Recommend>
+       <Lasted tabLabel='最新'></Lasted>
      </ScrollableTabView>
    </>
   );

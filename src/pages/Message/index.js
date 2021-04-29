@@ -1,9 +1,9 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * @Author visupervi
+ * @Description 消息路由组件
+ * @Date 5:53 下午 2021/4/27
+ * @Param
+ * @return
  */
 
 import React, {useEffect, useState} from 'react';
@@ -75,7 +75,7 @@ const Message = props => {
           title={'消息'}
           rightText={<IconFont name="icontongxunlu" style={{ color: "#fff", fontSize: 20 }} />}
           onRightPress={handlerRightPress}
-        ></AppHeader>
+        />
 
         <View style={{
           flexDirection: "row", justifyContent: "space-between",
@@ -126,7 +126,7 @@ const Message = props => {
               data={messageList}
               keyExtractor={(item) => item.id}
               renderItem={renderItem}
-            ></FlatList> : <></>
+            /> : <></>
         }
       </View>
     </>

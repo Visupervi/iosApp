@@ -59,7 +59,7 @@ const Question = props => {
           style={{flex: 1, height: '100%'}}
           source={require('../../../../assets/images/qabg.png')}
         >
-          <AppHeader displayLeft={true} title={'初级灵魂测试题'}></AppHeader>
+          <AppHeader displayLeft={true} title={'初级灵魂测试题'} />
           <View style={{marginTop: 60, flexDirection: 'row', justifyContent: 'space-between'}}>
             <ImageBackground
               style={{

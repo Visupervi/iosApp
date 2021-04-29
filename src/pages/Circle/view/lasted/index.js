@@ -34,32 +34,25 @@ const Lasted = props => {
     getData();
   }, []);
 
-  const handleMore = async (item) => {
-    const opts = [
-      { title: "举报", onPress: () => alert("举报") },
-      { title: "不感兴趣", onPress: () => {noInterest(item)}}
-    ]
-    ActionSheet.show(opts, { title: "取消" });
-  }
   const handleShowAlbum = () => {
-    console.log("dianjichakan ")
+    console.log('dianjichakan ');
 
-  }
+  };
   const handleStar = () => {
-    console.log("handlerStar");
-  }
+    console.log('handlerStar');
+  };
 
   const handlerLike = () => {
-    console.log("handlerLike");
-  }
+    console.log('handlerLike');
+  };
 
   const handlerComment = () => {
-    console.log("handlerComment");
-  }
+    console.log('handlerComment');
+  };
 
   const noInterest = () => {
-    console.log("不感兴趣");
-  }
+    console.log('不感兴趣');
+  };
 
   // 渲染item
   const renderItem = useCallback(({item}) => {
@@ -81,13 +74,14 @@ const Lasted = props => {
             <View style={{flex: 2, justifyContent: 'space-around'}}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Text style={{color: '#555'}}>{userDetail.nick_name}</Text>
-                <IconFont style={{
-                  marginLeft: 5,
-                  marginRight: 5,
-                  fontSize: 18,
-                  color: userDetail.gender === '女' ? '#b564bf' : 'red',
-                }}
-                          name={userDetail.gender === '女' ? 'icontanhuanv' : 'icontanhuanan'}/>
+                <IconFont
+                  style={{
+                    marginLeft: 5,
+                    marginRight: 5,
+                    fontSize: 18,
+                    color: userDetail.gender === '女' ? '#b564bf' : 'red',
+                  }}
+                  name={userDetail.gender === '女' ? 'icontanhuanv' : 'icontanhuanan'}/>
                 <Text style={{color: '#555'}}>{userDetail.age}岁</Text>
               </View>
               <View style={{flexDirection: 'row'}}>
@@ -120,23 +114,30 @@ const Lasted = props => {
           {/*相册结束*/}
 
           {/*  距离时间开始*/}
-          <View style={{ flexDirection: "row", paddingTop: 5, paddingBottom: 5 }}>
-            <View><Text style={{ color: "#666" }} >距离 {item.dist} m</Text></View>
-            <View><Text style={{ color: "#666", marginLeft: 8 }} >{item.create_time}</Text></View>
+          <View style={{flexDirection: 'row', paddingTop: 5, paddingBottom: 5}}>
+            <View><Text style={{color: '#666'}}>距离 {item.dist} m</Text></View>
+            <View><Text style={{color: '#666', marginLeft: 8}}>{item.create_time}</Text></View>
           </View>
           {/*距离时间结束*/}
 
           {/*三个小图标开始*/}
-          <View style={{ flexDirection: "row", justifyContent: "space-between" }}  >
-            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}
-                              onPress={() => {handleStar.bind(item)}}
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TouchableOpacity
+              style={{flexDirection: 'row', alignItems: 'center'}}
+              onPress={() => {
+                handleStar.bind(item);
+              }}
             >
-              <IconFont style={{ color: "#666" }} name="icondianzan-o" /><Text style={{ color: "#666" }} >{item.star_count}</Text>
+              <IconFont style={{color: '#666'}} name="icondianzan-o"/><Text
+              style={{color: '#666'}}>{item.star_count}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => { handlerComment(item)}}
-              style={{ flexDirection: 'row', alignItems: 'center' }} >
-              <IconFont style={{ color: "#666" }} name="iconpinglun" /><Text style={{ color: "#666" }} >{item.comment_count}</Text>
+              onPress={() => {
+                handlerComment(item);
+              }}
+              style={{flexDirection: 'row', alignItems: 'center'}}>
+              <IconFont style={{color: '#666'}} name="iconpinglun"/><Text
+              style={{color: '#666'}}>{item.comment_count}</Text>
             </TouchableOpacity>
           </View>
           {/*三个小图标结束*/}
@@ -148,7 +149,7 @@ const Lasted = props => {
   }, [dynamic]);
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       {
         dynamic.length > 0 ? <FlatList
           data={dynamic}

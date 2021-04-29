@@ -47,7 +47,7 @@ const MakeFriend = props => {
             width: '40%',
             alignSelf: 'center',
           }}
-        ></PersonFilter>
+        />
       </Overlay.View>
     );
     Overlay.show(overlayView);
@@ -62,15 +62,15 @@ const MakeFriend = props => {
       headerImage={require('../../assets/images/headfriend.png')}
       renderForeground={() => (
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <HeaderIcon></HeaderIcon>
+          <HeaderIcon/>
         </View>
       )}
     >
       <View style={{minHeight: 1000}}>
-        <Recommend></Recommend>
-        <View style={{height: 5, backgroundColor: '#ccc'}}></View>
-        <PerfectGirl></PerfectGirl>
-        <View style={{height: 5, backgroundColor: '#ccc'}}></View>
+        <Recommend/>
+        <View style={{height: 5, backgroundColor: '#ccc'}} />
+        <PerfectGirl />
+        <View style={{height: 5, backgroundColor: '#ccc'}}/>
         <View style={{
           height: 40,
           flexDirection: 'row',
@@ -81,11 +81,11 @@ const MakeFriend = props => {
           alignItems: 'center',
         }}>
           <Text>推荐</Text>
-          <IconFont onPress={handlerSelect} name="iconshaixuan"></IconFont>
+          <IconFont onPress={handlerSelect} name="iconshaixuan"/>
         </View>
 
         {/*推荐列表*/}
-        <RecommendList filterObj={filterObj}></RecommendList>
+        <RecommendList filterObj={filterObj}/>
       </View>
     </ImageHeaderScrollView>
   );

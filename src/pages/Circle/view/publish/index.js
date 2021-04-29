@@ -1,16 +1,12 @@
 /**
  * @Author visupervi
- * @Description 发布页面
+ * @Description 动态发布页面
  * @Date 3:56 下午 2021/4/26
  * @Param
  * @return
  */
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
   TextInput,
   View,
   TouchableOpacity
@@ -27,11 +23,8 @@ const Publish = props => {
             placeholder={"请填写动态（140字以内）"}
             multiline={true}
           >
-
-
           </TextInput>
         </TouchableOpacity>
-
       </View>
 
     </>

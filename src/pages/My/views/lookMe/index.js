@@ -59,7 +59,7 @@ const LookMe = props => {
           <View style={{justifyContent: 'space-around', alignItems: 'center'}}>
             <Text>
               {item.item.nick_name} &nbsp;
-              <IconFont style={{color: 'red'}} name="icontanhuanv"></IconFont>&nbsp;
+              <IconFont style={{color: 'red'}} name="icontanhuanv" />&nbsp;
               {item.item.age}岁
             </Text>
             <Text style={{marginTop: 2}}>
@@ -78,7 +78,7 @@ const LookMe = props => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-              <IconFont style={{color: 'red', fontSize: 30}} name="iconxin"></IconFont>
+              <IconFont style={{color: 'red', fontSize: 30}} name="iconxin" />
               <Text style={{
                 position: 'absolute',
                 color: '#fff',
@@ -93,11 +93,11 @@ const LookMe = props => {
   return (
     <>
       <View style={{ flex:1}}>
-        <AppHeader displayLeft={true} title={props.route.params.title}></AppHeader>
+        <AppHeader displayLeft={true} title={props.route.params.title} />
         {/*左部图片*/}
         {
           recommendList.length > 0 ?
-            <RecommendList></RecommendList> :
+            <RecommendList /> :
             <></>
         }
       </View>

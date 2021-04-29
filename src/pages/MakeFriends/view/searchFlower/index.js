@@ -36,14 +36,14 @@ const SearchFlower = props => {
   return (
     <>
       <View style={{flex: 1, backgroundColor: "#fff"}}>
-        <AppHeader displayLeft={true} title={"探花"}></AppHeader>
+        <AppHeader displayLeft={true} title={"探花"}/>
         <ImageBackground
           style={{ height: "60%" }}
           imageStyle={{ height: "100%" }}
           source={require("../../../../assets/images/testsoul_bg.png")}
         >
           <View>
-            <SwiperComponent cards={cards} isUrl={true}></SwiperComponent>
+            <SwiperComponent cards={cards} isUrl={true} />
           </View>
         </ImageBackground>
       </View>

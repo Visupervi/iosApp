@@ -29,7 +29,7 @@ const Settings = props => {
     }]
   return (
     <View style={{flex:1}}>
-      <AppHeader displayLeft={true} title={props.route.params.title}></AppHeader>
+      <AppHeader displayLeft={true} title={props.route.params.title} />
       <View style={{ marginTop: 15 }}>
         {
           list.map((v,i) => {

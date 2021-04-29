@@ -92,7 +92,7 @@ const SearchNear = props => {
             width: '40%',
             alignSelf: 'center',
           }}
-        ></PersonFilter>
+         />
       </Overlay.View>
     );
     Overlay.show(overlayView);
@@ -114,9 +114,9 @@ const SearchNear = props => {
           imageStyle={{height: '100%'}}
           source={require('../../../../assets/images/search.gif')}
         >
-          <AppHeader displayLeft={true} title={'搜附近'}></AppHeader>
+          <AppHeader displayLeft={true} title={'搜附近'} />
 
-          <IconFont onPress={handlerNearFilter} name="iconshaixuan"></IconFont>
+          <IconFont onPress={handlerNearFilter} name="iconshaixuan" />
           {
             nearPerson.map((v, i) => {
               const whMap = WHMap[getWidthHeight(v.dist)];

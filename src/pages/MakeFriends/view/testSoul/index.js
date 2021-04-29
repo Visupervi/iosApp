@@ -52,8 +52,8 @@ const TestSoul = props => {
           imageStyle={{height: '60%'}}
           source={require('../../../../assets/images/testsoul_bg.png')}
         >
-          <AppHeader displayLeft={true} title={'测灵魂'}></AppHeader>
-          <SwiperComponent cards={survey} isUrl={false}></SwiperComponent>
+          <AppHeader displayLeft={true} title={'测灵魂'} />
+          <SwiperComponent cards={survey} isUrl={false} />
           <View style={{
             width: '40%',
             height: 40,

@@ -117,7 +117,7 @@ const PersonFilter = props => {
             fontWeight: 'bold',
             color: '#bbb',
           }}>筛选</Text>
-          <IconFont style={{fontSize: 20}} onPress={props.close} name="iconshibai"></IconFont>
+          <IconFont style={{fontSize: 20}} onPress={props.close} name="iconshibai" />
         </View>
         {/*性别选择模块*/}
         <View style={{
@@ -143,7 +143,7 @@ const PersonFilter = props => {
                 setGender('男');
               }}
             >
-              <SvgUri svgXmlData={male} width={props.iconWid} height={props.iconHei}></SvgUri>
+              <SvgUri svgXmlData={male} width={props.iconWid} height={props.iconHei} />
             </TouchableOpacity>
             <TouchableOpacity style={{
               width: 40,
