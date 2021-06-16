@@ -8,16 +8,13 @@
 import React, {useCallback} from 'react';
 import DatePicker from 'react-native-datepicker';
 // import {inject, observer} from "mobx-react"
-import {useNavigation} from "@react-navigation/native";
-import {
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {TouchableOpacity, View} from 'react-native';
 import {Input} from 'react-native-elements';
 import SvgUri from 'react-native-svg-uri';
 import {female, male} from '../../utils/SvgIcons';
 // import ImagePicker from "react-native-image-crop-picker";
-import Toast from "../../utils/Toast";
+import Toast from '../../utils/Toast';
 import LinearGradientBtn from '../GradientBtnComponent/LineGradientBtn';
 
 const FormComponent = props => {
@@ -25,44 +22,64 @@ const FormComponent = props => {
   const Navigation = useNavigation();
   const {formObj, setFormObj} = props;
   const data = Object.assign({}, formObj);
-  const currentDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
+  const currentDate = `${new Date().getFullYear()}-${
+    new Date().getMonth() + 1
+  }-${new Date().getDate()}`;
   // data["birthDate"] = currentDate;
   // 昵称
-  const handlerNickName = useCallback(value => {
-    console.log("nickName", data);
-    data["nickName"] = value;
-    setFormObj(data);
-  }, [formObj]);
+  const handlerNickName = useCallback(
+    value => {
+      // console.log('nickName', data);
+      data.nickName = value;
+      setFormObj(data);
+    },
+    [data, setFormObj],
+  );
 
   // 性别
-  const handlerGender = useCallback(value => {
-    data["gender"] = value;
-    setFormObj(data);
-  }, [formObj]);
+  const handlerGender = useCallback(
+    value => {
+      data.gender = value;
+      setFormObj(data);
+    },
+    [data, setFormObj],
+  );
 
   // 生日
-  const handlerBirthDate = useCallback(date => {
-    data["birthDate"] = date;
-    setFormObj(data);
-  }, [formObj]);
+  const handlerBirthDate = useCallback(
+    date => {
+      data.birthDate = date;
+      setFormObj(data);
+    },
+    [data, setFormObj],
+  );
 
   // 地址
-  const handlerChangeCity = useCallback(value => {
-    data["address"] = value;
-    setFormObj(data);
-  }, [formObj]);
+  const handlerChangeCity = useCallback(
+    value => {
+      data.address = value;
+      setFormObj(data);
+    },
+    [data, setFormObj],
+  );
 
   // 头像
   const handlerAvatar = useCallback(() => {
-    if(data.gender === "" || data.address === "" || data.birthDate === "" || data.nickName === "" || Object.keys(data).length === 0) {
-      Toast.sad("性别或者地址或者生日或者昵称不能为空哦",2000, "top");
+    if (
+      data.gender === '' ||
+      data.address === '' ||
+      data.birthDate === '' ||
+      data.nickName === '' ||
+      Object.keys(data).length === 0
+    ) {
+      Toast.sad('性别或者地址或者生日或者昵称不能为空哦', 2000, 'top');
     } else {
-      Navigation.navigate("Home")
+      Navigation.navigate('Home');
       // handlerImage().then(res => {
       //   console.log("res", res);
       // });
     }
-  },[]);
+  }, [Navigation, data]);
 
   // 处理头像图片函数
   //
@@ -83,38 +100,44 @@ const FormComponent = props => {
             borderRadius: 30,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: data['gender'] === '男' ? 'red' : '#ccc',
+            backgroundColor: data.gender === '男' ? 'red' : '#ccc',
           }}
           onPress={() => {
             handlerGender('男');
-          }}
-        >
-          <SvgUri svgXmlData={male} width={props.iconWid} height={props.iconHei}></SvgUri>
+          }}>
+          <SvgUri
+            svgXmlData={male}
+            width={props.iconWid}
+            height={props.iconHei}
+          />
         </TouchableOpacity>
-        <TouchableOpacity style={{
-          width: 60,
-          height: 60,
-          borderRadius: 30,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: data.gender === '女' ? 'red' : '#ccc',
-        }}
-        onPress={() => {
-          handlerGender('女');
-        }}
-        >
-          <SvgUri svgXmlData={female} width={props.iconWid} height={props.iconHei}></SvgUri>
+        <TouchableOpacity
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: data.gender === '女' ? 'red' : '#ccc',
+          }}
+          onPress={() => {
+            handlerGender('女');
+          }}>
+          <SvgUri
+            svgXmlData={female}
+            width={props.iconWid}
+            height={props.iconHei}
+          />
         </TouchableOpacity>
       </View>
       <View style={{marginTop: 30}}>
         <Input
           placeholder={'昵称设置'}
           value={formObj.nickName}
-          onChangeText={(nickname) => {
+          onChangeText={nickname => {
             handlerNickName(nickname);
           }}
-        >
-        </Input>
+        />
       </View>
       <View>
         <DatePicker
@@ -144,7 +167,7 @@ const FormComponent = props => {
               color: '#afafaf',
             },
           }}
-          onDateChange={(date) => {
+          onDateChange={date => {
             handlerBirthDate(date);
           }}
         />
@@ -154,11 +177,15 @@ const FormComponent = props => {
           placeholder={'设置地址'}
           value={formObj.address}
           onChangeText={handlerChangeCity}
-        >
-        </Input>
+        />
       </View>
       <View style={{width: '90%', height: 40, alignSelf: 'center'}}>
-        <LinearGradientBtn color={['#9b63cd', '#e0708c']} style={{color:"#fff"}} onPress={handlerAvatar}>设置头像</LinearGradientBtn>
+        <LinearGradientBtn
+          color={['#9b63cd', '#e0708c']}
+          style={{color: '#fff'}}
+          onPress={handlerAvatar}>
+          设置头像
+        </LinearGradientBtn>
       </View>
     </>
   );

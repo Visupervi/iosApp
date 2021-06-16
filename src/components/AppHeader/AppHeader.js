@@ -21,42 +21,53 @@ const AppHeader = props => {
   // goBack
   return (
     <View>
-      <StatusBar
-        backgroundColor="transparent"
-        translucent={true}
-      />
+      <StatusBar backgroundColor="transparent" translucent={true} />
       <ImageBackground
         source={require('../../assets/images/headbg.png')}
         style={{
-          height: 80, paddingTop: 30, flexDirection: 'row',
-          paddingLeft: 10, paddingRight: 10,
-          alignItems: 'center', justifyContent: 'space-between',
-        }}
-      >
+          height: 80,
+          paddingTop: 30,
+          flexDirection: 'row',
+          paddingLeft: 10,
+          paddingRight: 10,
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
         <TouchableOpacity
           onPress={navigation.goBack}
-          style={{width: 80, flexDirection: 'row', alignItems: 'center', ...props.style}}>
-          {
-            props.displayLeft ? <IconFont style={{color: '#fff'}} name="iconfanhui"/> : <></>
-          }
+          style={{
+            width: 80,
+            flexDirection: 'row',
+            alignItems: 'center',
+            ...props.style,
+          }}>
+          {props.displayLeft ? (
+            <IconFont style={{color: '#fff'}} name="iconfanhui" />
+          ) : (
+            <></>
+          )}
 
-          {
-            props.displayLeft ? <Text style={{color: '#fff'}}>返回</Text> : <></>
-          }
-
+          {props.displayLeft ? (
+            <Text style={{color: '#fff'}}>返回</Text>
+          ) : (
+            <></>
+          )}
         </TouchableOpacity>
 
-        <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>{props.title}</Text>
+        <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>
+          {props.title}
+        </Text>
 
         <TouchableOpacity
-          onPress={props.onRightPress || function () {
-          }}
-          style={{width: 80, color: '#fff', textAlign: 'right', alignItems: 'flex-end'}}>
-
+          onPress={props.onRightPress || function () {}}
+          style={{
+            width: 80,
+            color: '#fff',
+            textAlign: 'right',
+            alignItems: 'flex-end',
+          }}>
           {props.rightText}
-
         </TouchableOpacity>
-
       </ImageBackground>
     </View>
   );

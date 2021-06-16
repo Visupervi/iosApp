@@ -33,34 +33,42 @@ const Home = props => {
     {
       selected: 'friend',
       title: '交友',
-      renderIcon: () => <Svg width="20" height="20" svgXmlData={friend}/>,
-      renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedFriend}/>,
+      renderIcon: () => <Svg width="20" height="20" svgXmlData={friend} />,
+      renderSelectedIcon: () => (
+        <Svg width="20" height="20" svgXmlData={selectedFriend} />
+      ),
       onPress: () => setSelectedTab('friend'),
-      component: <MakeFriend/>,
+      component: <MakeFriend />,
     },
     {
       selected: 'group',
       title: '圈子',
-      renderIcon: () => <Svg width="20" height="20" svgXmlData={group}/>,
-      renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedGroup}/>,
+      renderIcon: () => <Svg width="20" height="20" svgXmlData={group} />,
+      renderSelectedIcon: () => (
+        <Svg width="20" height="20" svgXmlData={selectedGroup} />
+      ),
       onPress: () => setSelectedTab('group'),
-      component: <Circle/>,
+      component: <Circle />,
     },
     {
       selected: 'message',
       title: '消息',
-      renderIcon: () => <Svg width="20" height="20" svgXmlData={message}/>,
-      renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedMessage}/>,
+      renderIcon: () => <Svg width="20" height="20" svgXmlData={message} />,
+      renderSelectedIcon: () => (
+        <Svg width="20" height="20" svgXmlData={selectedMessage} />
+      ),
       onPress: () => setSelectedTab('message'),
-      component: <Message/>,
+      component: <Message />,
     },
     {
       selected: 'my',
       title: '我的',
-      renderIcon: () => <Svg width="20" height="20" svgXmlData={my}/>,
-      renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedMy}/>,
+      renderIcon: () => <Svg width="20" height="20" svgXmlData={my} />,
+      renderSelectedIcon: () => (
+        <Svg width="20" height="20" svgXmlData={selectedMy} />
+      ),
       onPress: () => setSelectedTab('my'),
-      component: <MyHome/>,
+      component: <MyHome />,
     },
   ];
   const styles = StyleSheet.create({
@@ -71,10 +79,9 @@ const Home = props => {
   });
   return (
     <>
-
       <View style={styles.container}>
         <TabNavigator>
-          {pages.map((v, i) =>
+          {pages.map((v, i) => (
             <TabNavigator.Item
               key={i}
               selected={selectedTab === v.selected}
@@ -87,13 +94,12 @@ const Home = props => {
                 backgroundColor: '#eee',
                 justifyContent: 'center',
                 paddingBottom: 15,
-              }}
-            >
+              }}>
               {v.component}
-            </TabNavigator.Item>)}
+            </TabNavigator.Item>
+          ))}
         </TabNavigator>
       </View>
-
     </>
   );
 };

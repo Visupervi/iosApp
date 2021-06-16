@@ -17,40 +17,44 @@ const GroupTabbar = props => {
   return (
     <ImageBackground
       style={{
-        height: 100, flexDirection: 'row', paddingLeft: 20, paddingRight: 20, paddingTop: 20,
+        height: 100,
+        flexDirection: 'row',
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 20,
         justifyContent: 'space-evenly',
       }}
-      source={require('../../../assets/images/rectanglecopy.png')}
-    >
-      {
-        props.isBack ?
-          <IconFont
-            name="iconfanhui"
-            style={{
-              color: '#fff',
-              fontSize: 20,
-              position: 'absolute',
-              left: 10,
-              bottom: 30,
-            }}
-            onPress={props.onPress}
-          /> :
-          <></>
-      }
+      source={require('../../../assets/images/rectanglecopy.png')}>
+      {props.isBack ? (
+        <IconFont
+          name="iconfanhui"
+          style={{
+            color: '#fff',
+            fontSize: 20,
+            position: 'absolute',
+            left: 10,
+            bottom: 30,
+          }}
+          onPress={props.onPress}
+        />
+      ) : (
+        <></>
+      )}
 
-      {tabs.map((v, i) => <TouchableOpacity
-        key={i}
-        onPress={() => goToPage(i)}
-        style={{
-          justifyContent: 'center',
-          borderBottomColor: '#fff',
-          borderBottomWidth: activeTab === i ? 3 : 0,
-        }}
-      >
-        <Text
-          style={{color: '#fff', fontSize: activeTab === i ? 26 : 20}}
-        >{v}</Text>
-      </TouchableOpacity>)}
+      {tabs.map((v, i) => (
+        <TouchableOpacity
+          key={i}
+          onPress={() => goToPage(i)}
+          style={{
+            justifyContent: 'center',
+            borderBottomColor: '#fff',
+            borderBottomWidth: activeTab === i ? 3 : 0,
+          }}>
+          <Text style={{color: '#fff', fontSize: activeTab === i ? 26 : 20}}>
+            {v}
+          </Text>
+        </TouchableOpacity>
+      ))}
     </ImageBackground>
   );
 };

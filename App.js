@@ -8,18 +8,15 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {
-  View,
-} from 'react-native';
+import {View} from 'react-native';
 import Nav from './src/Nav';
 
 const App: () => Node = () => {
   return (
     <View style={{flex: 1}}>
-      <Nav></Nav>
+      <Nav />
     </View>
   );
 };
-
 
 export default App;

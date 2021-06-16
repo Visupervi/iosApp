@@ -1,5 +1,5 @@
 /**
- * @Author visupervi
+ * @Author Visupervi
  * @Description 测灵魂路由组件
  * @Date 3:30 下午 2021/4/19
  * @Param
@@ -8,7 +8,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   View,
-  Text, ImageBackground, Image,
+  ImageBackground
 } from 'react-native';
 import AppHeader from '../../../../components/AppHeader/AppHeader';
 import LinearGradientBtn from '../../../../components/GradientBtnComponent/LineGradientBtn';
@@ -18,7 +18,7 @@ import {useNavigation} from "@react-navigation/native"
 
 
 
-const TestSoul = props => {
+const TestSoul = () => {
   // const [nickName, setNickName] = useState('');
   const Navigation = useNavigation();
   const [survey, setSurvey] = useState([]);
@@ -61,7 +61,7 @@ const TestSoul = props => {
             position: 'absolute',
             bottom: 20,
           }}>
-            <LinearGradientBtn style={{color:"#fff"}}color={['#9b63cd', '#e0708c']} onPress={handlerBeginTest}>开始测试</LinearGradientBtn>
+            <LinearGradientBtn style={{color:"#fff"}} color={['#9b63cd', '#e0708c']} onPress={handlerBeginTest}>开始测试</LinearGradientBtn>
           </View>
         </ImageBackground>
       </View>

@@ -12,12 +12,16 @@ import {female, male} from '../../utils/SvgIcons';
 
 const SvgIcons = props => {
   const {formObj, setGender} = props;
-  console.log("formObj", formObj);
+  console.log('formObj', formObj);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const data = {...formObj};
-  const handlerGender = useCallback((value)=>{
-    data["gender"] = value;
-    setGender(data);
-  },[data.gender])
+  const handlerGender = useCallback(
+    value => {
+      data.gender = value;
+      setGender(data);
+    },
+    [data, setGender],
+  );
   return (
     <>
       <View style={{...props.style}}>
@@ -28,26 +32,37 @@ const SvgIcons = props => {
             borderRadius: 30,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: data.gender === "男" ? "red" : '#ccc'
+            backgroundColor: data.gender === '男' ? 'red' : '#ccc',
           }}
-          onPress={()=>{handlerGender("男")}}
-        >
-          <SvgUri svgXmlData={male} width={props.iconWid} height={props.iconHei}></SvgUri>
+          onPress={() => {
+            handlerGender('男');
+          }}>
+          <SvgUri
+            svgXmlData={male}
+            width={props.iconWid}
+            height={props.iconHei}
+          />
         </TouchableOpacity>
-        <TouchableOpacity style={{
-          width: 60,
-          height: 60,
-          borderRadius: 30,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: data.gender === "女" ? "red" : '#ccc'
-        }}
-         onPress={()=>{handlerGender("女")}}
-        >
-          <SvgUri svgXmlData={female} width={props.iconWid} height={props.iconHei}></SvgUri>
+        <TouchableOpacity
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: data.gender === '女' ? 'red' : '#ccc',
+          }}
+          onPress={() => {
+            handlerGender('女');
+          }}>
+          <SvgUri
+            svgXmlData={female}
+            width={props.iconWid}
+            height={props.iconHei}
+          />
         </TouchableOpacity>
       </View>
     </>
   );
-}
+};
 export default SvgIcons;

@@ -6,12 +6,7 @@
  * @return
  */
 import React, {useState, useCallback, useEffect} from 'react';
-import {
-  View,
-  StatusBar,
-  Image,
-  Text,
-} from 'react-native';
+import {View, StatusBar, Image, Text} from 'react-native';
 import {Input} from 'react-native-elements';
 import {validatePhone} from '../../utils/validator';
 import LinearGradientBtn from '../../components/GradientBtnComponent/LineGradientBtn';
@@ -29,20 +24,23 @@ const Login = props => {
   const [isClick, setIsClick] = useState(false);
   const [btnText, setBtnText] = useState('重新获取');
   // 手机号提交函数
-  const handlerSubmit = useCallback(async (e) => {
-    setPhoneFlag(validatePhone(phone));
-    if (!validatePhone(phone)) {
-      return;
-    }
-    const result = await login();
-    console.log('result', result);
-    if (result.status === 200) {
-      setShowLogin(false);
-      countNum();
-    } else {
-      setShowLogin(true);
-    }
-  }, [phone]);
+  const handlerSubmit = useCallback(
+    async e => {
+      setPhoneFlag(validatePhone(phone));
+      if (!validatePhone(phone)) {
+        return;
+      }
+      const result = await login();
+      console.log('result', result);
+      if (result.status === 200) {
+        setShowLogin(false);
+        countNum();
+      } else {
+        setShowLogin(true);
+      }
+    },
+    [phone],
+  );
 
   // 渲染登录组件
 
@@ -50,10 +48,12 @@ const Login = props => {
     return (
       <>
         <View style={{padding: 20}}>
-          <Text style={{fontSize: 20, color: '#888', fontWeight: 'bold'}}>手机号注册登录</Text>
+          <Text style={{fontSize: 20, color: '#888', fontWeight: 'bold'}}>
+            手机号注册登录
+          </Text>
           <View style={{marginTop: 30}}>
             <Input
-              placeholder='请输入手机号'
+              placeholder="请输入手机号"
               maxLength={11}
               value={phone}
               keyboardType="name-phone-pad"
@@ -62,16 +62,22 @@ const Login = props => {
               onSubmitEditing={handlerSubmit}
               errorMessage={phoneFlag ? '' : '手机号格式不正确'}
               returnKeyType="send"
-              leftIcon={{type: 'font-awesome', name: 'phone', color: '#ccc', size: 20}}
+              leftIcon={{
+                type: 'font-awesome',
+                name: 'phone',
+                color: '#ccc',
+                size: 20,
+              }}
             />
           </View>
         </View>
         <View style={{width: '90%', height: 40, alignSelf: 'center'}}>
           <LinearGradientBtn
-            style={{color: '#fff'}}
+            style={{color: '#fff', borderRadius: 20}}
             color={['#9b63cd', '#e0708c']}
-            onPress={handlerSubmit}
-            style={{borderRadius: 20}}>获取验证码</LinearGradientBtn>
+            onPress={handlerSubmit}>
+            获取验证码
+          </LinearGradientBtn>
         </View>
       </>
     );
@@ -83,18 +89,32 @@ const Login = props => {
     return (
       <>
         <View style={{padding: 20}}>
-          <Text style={{fontSize: 20, color: '#888', fontWeight: 'bold'}}>请输入六位验证码</Text>
+          <Text style={{fontSize: 20, color: '#888', fontWeight: 'bold'}}>
+            请输入六位验证码
+          </Text>
           <Text style={{marginTop: 30}}>已发送至+86 {phone}</Text>
           <View>
-            <CodeFieldInput value={value} onPress={setValue} onSubmit={handlerOnsubmit}/>
+            <CodeFieldInput
+              value={value}
+              onPress={setValue}
+              onSubmit={handlerOnsubmit}
+            />
           </View>
         </View>
-        <View style={{width: '90%', height: 40, alignSelf: 'center', marginTop: 50}}>
+        <View
+          style={{
+            width: '90%',
+            height: 40,
+            alignSelf: 'center',
+            marginTop: 50,
+          }}>
           <LinearGradientBtn
             disable={isClick}
             color={['#9b63cd', '#e0708c']}
             onPress={handlerSubmit}
-            style={{borderRadius: 20, color: '#fff'}}>{btnText}</LinearGradientBtn>
+            style={{borderRadius: 20, color: '#fff'}}>
+            {btnText}
+          </LinearGradientBtn>
         </View>
       </>
     );
@@ -103,7 +123,7 @@ const Login = props => {
   // 手机号修改函数
   const handlerChange = useCallback(value => {
     setPhone(value);
-  }, [phone]);
+  }, []);
 
   // 倒计时函数
 
@@ -116,14 +136,14 @@ const Login = props => {
       if (seconds === 0) {
         setIsClick(false);
         clearInterval(timerId);
-        setBtnText(`重新获取`);
+        setBtnText('重新获取');
       }
     }, 1000);
   };
 
   // 验证码交验提交
 
-  const handlerOnsubmit = async (e) => {
+  const handlerOnsubmit = async e => {
     e.preventDefault();
     if (value.length < 6) {
       Toast.message('验证码格式不正确', 3000, 'center');
@@ -140,21 +160,19 @@ const Login = props => {
         // alert("老用户");
       }
     }
-
   };
-
 
   return (
     <>
       <View style={{flex: 1}}>
-
         {/*设置标题栏*/}
-        <StatusBar backgroundColor="transparent" trunslucent={true}/>
+        <StatusBar backgroundColor="transparent" trunslucent={true} />
 
         {/*设置背景颜色*/}
         <Image
           style={{width: '100%', height: 200}}
-          source={require('../../assets/images/profileBackground.jpg')}/>
+          source={require('../../assets/images/profileBackground.jpg')}
+        />
 
         {/*设置登录框 */}
         {showLogin ? renderLogin() : renderCode()}

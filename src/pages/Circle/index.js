@@ -13,15 +13,14 @@ import Recommend from './view/recommend';
 import GroupTabbar from './components/GroupTabbar';
 const Circle = props => {
   return (
-   <>
-     <ScrollableTabView
-       initialPage={0}
-       renderTabBar={() => <GroupTabbar isBack={false}/>}
-     >
-       <Recommend tabLabel='推荐'></Recommend>
-       <Lasted tabLabel='最新'></Lasted>
-     </ScrollableTabView>
-   </>
+    <>
+      <ScrollableTabView
+        initialPage={0}
+        renderTabBar={() => <GroupTabbar isBack={false} />}>
+        <Recommend tabLabel="推荐" />
+        <Lasted tabLabel="最新" />
+      </ScrollableTabView>
+    </>
   );
 };
 

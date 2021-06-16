@@ -8,10 +8,7 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 
-import {
-  CodeField,
-  Cursor,
-} from 'react-native-confirmation-code-field';
+import {CodeField, Cursor} from 'react-native-confirmation-code-field';
 
 const styles = StyleSheet.create({
   root: {flex: 1, padding: 20},
@@ -33,7 +30,7 @@ const styles = StyleSheet.create({
 });
 
 const CELL_COUNT = 6;
-const CodeFieldInput = (props) => {
+const CodeFieldInput = props => {
   const {value, onPress, onSubmit} = props;
 
   return (
@@ -47,11 +44,9 @@ const CodeFieldInput = (props) => {
       textContentType="oneTimeCode"
       returnKeyType="send"
       renderCell={({index, symbol, isFocused}) => (
-        <Text
-          key={index}
-          style={[styles.cell, isFocused && styles.focusCell]}>
+        <Text key={index} style={[styles.cell, isFocused && styles.focusCell]}>
           {isFocused}
-          {symbol || (isFocused ? <Cursor/> : null)}
+          {symbol || (isFocused ? <Cursor /> : null)}
         </Text>
       )}
     />

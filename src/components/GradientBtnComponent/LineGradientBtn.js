@@ -30,13 +30,16 @@ const LinearGradientBtn = props => {
   });
   return (
     <>
-      <TouchableOpacity disabled={disable} onPress={onPress}
-                        style={{width: '100%', height: '100%', ...style, overflow: 'hidden'}}>
-        <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={props.color}
-                        style={styles.linearGradient}>
-          <Text style={styles.buttonText}>
-            {props.children}
-          </Text>
+      <TouchableOpacity
+        disabled={disable}
+        onPress={onPress}
+        style={{width: '100%', height: '100%', ...style, overflow: 'hidden'}}>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={props.color}
+          style={styles.linearGradient}>
+          <Text style={styles.buttonText}>{props.children}</Text>
         </LinearGradient>
       </TouchableOpacity>
     </>
